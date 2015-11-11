@@ -8,9 +8,11 @@ class AnagramFinderSpec extends Specification { def is = s2"""
   I can check that a word is entirely contained within another word
     hell is contained in hello $hello_contains_hell
     help is not contained in hello  $hello_does_not_contains_help
+    leo is contained in hello  $hello_contains_leo
   """
   def anagramFinder1 = new AnagramFinder("hello") must beAnInstanceOf[AnagramFinder]
   def hasword = new AnagramFinder("hello").word must be_==("hello")
   def hello_contains_hell = new AnagramFinder("hello").contains("hell") must be_==(true)
   def hello_does_not_contains_help = new AnagramFinder("hello").contains("help") must be_==(false)
+  def hello_contains_leo = new AnagramFinder("hello").contains("leo") must be_==(true)
 }
