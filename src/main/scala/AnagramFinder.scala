@@ -3,7 +3,8 @@
  */
 class AnagramFinder(myword: String ) {
   var word: String = myword
+
   def contains(str: String) = {
-    word.contains(str)
+    str.toSet.subsetOf(word.toSet)
   }
 }
