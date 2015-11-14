@@ -12,13 +12,18 @@ class AnagramFinderSpec extends Specification with Mockito {
       new AnagramFinder("hello").contains("leo") must be_==(true)
     }
     "I can get all subsets of a given word" in {
-      val subset_a: Set[Set[Char]] = new AnagramFinder("at").getSubsets
-      subset_a.size must be_==(4)
-      Set().subsetOf(subset_a) must be_==(true)
-      Set(Set('a')).subsetOf(subset_a) must be_==(true)
-      Set(Set('t')).subsetOf(subset_a) must be_==(true)
-      Set(Set('a', 't')).subsetOf(subset_a) must be_==(true)
-      Set(Set('b', 't')).subsetOf(subset_a) must be_==(false)
+      val subset_at: Set[Set[Char]] = new AnagramFinder("at").getSubsets
+      subset_at.size must be_==(4)
+      Set().subsetOf(subset_at) must be_==(true)
+      Set(Set('a')).subsetOf(subset_at) must be_==(true)
+      Set(Set('t')).subsetOf(subset_at) must be_==(true)
+      Set(Set('a', 't')).subsetOf(subset_at) must be_==(true)
+      Set(Set('b', 't')).subsetOf(subset_at) must be_==(false)
+    }
+
+    "I can get all possible groups of subsets, hat = 'aht', 'a ht', 'a h t', 'ah t', 'at h' " in {
+      val subset_hat: Set[Set[Set[Char]]] = new AnagramFinder("hat").getSubsetCombinations
+      true must_==(true)
     }
 
   }

@@ -1,8 +1,12 @@
 object HelloWorld {
   def main(args: Array[String]) = {
     println("Hello world")
-    val subsets = new AnagramFinder("hello").getSubsets()
-    subsets.foreach(println)
+    new AnagramFinder("abcdefghi").getSubsets.foreach(println)
+    var finder = new AnagramFinder("abcde")
+    finder.getAllSubSets
+//    new AnagramFinder("hat").getSubsetCombinations.foreach(println)
+//    println(new AnagramFinder("hat").getSubWords("hat", ""))
+
     println("Goodbye world")
   }
 }
