@@ -7,4 +7,8 @@ class AnagramFinder(myword: String ) {
   def contains(str: String) = {
     str.toSet.subsetOf(word.toSet)
   }
+
+  def getSubsets() : Set[Set[Char]] = {
+    return myword.toSet[Char].subsets.toSet[Set[Char]]
+  }
 }
